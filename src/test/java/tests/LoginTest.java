@@ -36,3 +36,4 @@ public class LoginTest extends BaseTest {
                 "Wrong message");
     }
 }
+

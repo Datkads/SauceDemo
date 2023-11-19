@@ -12,3 +12,4 @@ public abstract class BasePage {
         this.chrome = chrome;
     }
 }
+
