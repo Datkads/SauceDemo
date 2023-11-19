@@ -28,4 +28,3 @@ public class LoginPage extends BasePage {
         return chrome.findElement(ERROR_MESSAGE).getText();
     }
 }
-

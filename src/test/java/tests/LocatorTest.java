@@ -47,4 +47,3 @@ public class LocatorTest extends BaseTest {
         chrome.findElement(By.cssSelector("a[href*='facebook']"));
     }
 }
-

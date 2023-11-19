@@ -27,4 +27,3 @@ public class CartPage extends BasePage {
         return chrome.findElement(price).getText();
     }
 }
-

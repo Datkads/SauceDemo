@@ -30,4 +30,3 @@ public class ProductsPage extends BasePage {
         chrome.findElement(CART_LINK).click();
     }
 }
-
