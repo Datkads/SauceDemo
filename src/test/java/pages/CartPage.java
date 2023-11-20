@@ -20,7 +20,8 @@ public class CartPage extends BasePage {
                 By.xpath(String.format("//div[contains(text(), 'Sauce Labs Bike Light')]", productName))).isDisplayed();
     }
 
-    public String getProductPrice() {
-        return chrome.findElement(By.cssSelector(".inventory_item_price")).getText();
+    public String getProductPrice(String productName) {
+        return chrome.findElement(By.xpath(String.format("//*[text()='%s']/ancestor::div[@class='cart_item']" +
+                "//*[@class='inventory_item_price']", productName))).getText();
     }
 }

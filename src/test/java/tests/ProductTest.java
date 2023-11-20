@@ -14,6 +14,7 @@ public class ProductTest extends BaseTest {
         productsPage.addToCart("Sauce Labs Bike Light");
         productsPage.openCart();
         assertTrue(cartPage.isProductInTheCart("Sauce Labs Bike Light"), "Item is not in a cart.");
-        assertEquals(cartPage.getProductPrice(), "$9.99", "Wrong price of the item.");
+        assertEquals(cartPage.getProductPrice("Sauce Labs Bike Light"),
+                "$9.99", "Wrong price of the item.");
     }
 }
