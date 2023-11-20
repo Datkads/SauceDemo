@@ -2,10 +2,15 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CartPage extends BasePage {
 
     private final By CHECKOUT_BUTTON = By.id("remove-sauce-labs-backpack");
+
+    public void isOpened() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("checkout")));
+    }
 
     public CartPage(WebDriver chrome) {
         super(chrome);
