@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CartPage extends BasePage {
 
-    private final By CHECKOUT_BUTTON = By.id("remove-sauce-labs-backpack");
+    private final By CHECKOUT_BUTTON = By.id("checkout");
 
     public void isOpened() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("checkout")));
@@ -14,6 +14,10 @@ public class CartPage extends BasePage {
 
     public CartPage(WebDriver chrome) {
         super(chrome);
+    }
+
+    public void clickCheckout() {
+        chrome.findElement(CHECKOUT_BUTTON).click();
     }
 
     public void open() {
