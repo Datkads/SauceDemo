@@ -10,7 +10,7 @@ import pages.CheckoutPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 @Listeners(TestListener.class)
 public class BaseTest {
@@ -32,7 +32,7 @@ public class BaseTest {
             chrome = new EdgeDriver();
             chrome.manage().window().maximize();
         }
-        chrome.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        chrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         loginPage = new LoginPage(chrome);
         productsPage = new ProductsPage(chrome);
