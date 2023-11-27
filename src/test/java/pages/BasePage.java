@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public abstract class BasePage {
 
     WebDriver chrome;
@@ -12,6 +14,6 @@ public abstract class BasePage {
 
     BasePage(WebDriver chrome) {
         this.chrome = chrome;
-        wait = new WebDriverWait(chrome, 20);
+        wait = new WebDriverWait(chrome, Duration.ofSeconds(20));
     }
 }
