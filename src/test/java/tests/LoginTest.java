@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
 
-    @Test(description = "Successful user login test")
+    @Test(description = "Check standard user login(successful login)")
     public void successfulLogin() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -31,21 +31,21 @@ public class LoginTest extends BaseTest {
         assertEquals(loginPage.getError(), expectedError, "Wrong message");
     }
 
-    @Test(description = "Empty fields login test")
+    @Test(description = "Try empty Fields Login")
     public void emptyFieldsLogin() {
         loginPage.open();
         loginPage.login("", "");
         assertEquals(loginPage.getError(), "Epic sadface: Username is required", "Wrong message");
     }
 
-    @Test(description = "Empty password field login test")
+    @Test(description = "Check empty password login")
     public void emptyPasswordFieldLogin() {
         loginPage.open();
         loginPage.login("standard_user", "");
         assertEquals(loginPage.getError(), "Epic sadface: Password is required", "Wrong message");
     }
 
-    @Test(description = "Locked user login test")
+    @Test(description = "Try locked user login")
     public void lockedUserLogin() {
         loginPage.open();
         loginPage.login("locked_out_user", "secret_sauce");

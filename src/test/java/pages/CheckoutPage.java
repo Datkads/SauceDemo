@@ -1,8 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class CheckoutPage extends BasePage {
 
     private final By FIRST_NAME_INPUT = By.id("first-name");
@@ -18,6 +20,7 @@ public class CheckoutPage extends BasePage {
     }
 
     public void fillInTheFields(String firstName, String lastName, String postalCode) {
+        log.info("Filling in the fields with data: '{}', '{}', '{}'", firstName, lastName, postalCode);
         chrome.findElement(FIRST_NAME_INPUT).sendKeys(firstName);
         chrome.findElement(LAST_NAME_INPUT).sendKeys(lastName);
         chrome.findElement(POSTAL_NAME_INPUT).sendKeys(postalCode);
@@ -33,6 +36,7 @@ public class CheckoutPage extends BasePage {
     }
 
     public void clickFinish() {
+        log.info("Pressing the finish button.");
         chrome.findElement(FINISH_BUTTON).click();
     }
 }

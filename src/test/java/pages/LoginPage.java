@@ -1,8 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class LoginPage extends BasePage {
 
     private final By USERNAME_INPUT = By.id("user-name");
@@ -19,6 +21,7 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String user, String password) {
+        log.info("Log in using credentials: '{}', '{}'", user, password);
         chrome.findElement(USERNAME_INPUT).sendKeys(user);
         chrome.findElement(PASSWORD_INPUT).sendKeys(password);
         chrome.findElement(LOGIN_BUTTON).click();
