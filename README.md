@@ -7,7 +7,7 @@ Check empty password login
 
 Try locked user login
 
-Open and close the burger menu
+Check burger menu
 
 Add any item to the cart
 
