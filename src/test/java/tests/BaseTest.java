@@ -35,7 +35,7 @@ public class BaseTest {
             WebDriverManager.edgedriver().setup();
             EdgeOptions options = new EdgeOptions();
             options.addArguments("headless");
-            chrome = new EdgeDriver();
+            chrome = new EdgeDriver(options);
             //chrome.manage().window().maximize();
         }
         chrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
