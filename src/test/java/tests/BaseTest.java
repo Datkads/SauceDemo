@@ -42,6 +42,8 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true, description = "Browser shutdown")
     public void tearDown() {
-        chrome.quit();
+        if(chrome != null) {
+            chrome.quit();
+        }
     }
 }
