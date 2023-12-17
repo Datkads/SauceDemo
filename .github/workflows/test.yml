@@ -18,7 +18,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      USER: ${{secrets.SF_USER}}
+      PASSWORD: ${{secrets.SF_PASSWORD}}
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 11
@@ -32,6 +34,6 @@ jobs:
         browser: edge
         version: latest
     - name: Run Tests Chrome
-      run: mvn clean test
+      run: mvn clean test -Duser=$USER -Dpassword=$PASSWORD
     - name: Run Tests All Browsers
       run: mvn clean test -DsuiteXmlFile='src/test/resources/CrossBrowser.xml'
