@@ -5,6 +5,7 @@
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.ProductTest"/>
+            <class name="tests.CheckoutFieldsTest"/>
             <parameter name="browser" value="chrome"></parameter>
         </classes>
     </test> <!-- Test -->
@@ -12,6 +13,7 @@
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.ProductTest"/>
+            <class name="tests.CheckoutFieldsTest"/>
             <parameter name="browser" value="edge"></parameter>
         </classes>
     </test> <!-- Test -->
