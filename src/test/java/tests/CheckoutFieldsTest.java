@@ -54,4 +54,4 @@ public class CheckoutFieldsTest extends BaseTest {
                 "Thank you for your order!",
                 "Wrong message or not reflected");
     }
-}
+  }

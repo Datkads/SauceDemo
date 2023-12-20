@@ -1,5 +1,8 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -35,6 +38,11 @@ public class CheckoutPage extends BasePage {
     public String getMessage() {
         return chrome.findElement(SUCCESSFUL_MESSAGE).getText();
     }
+
+    public void clickFinish() {
+        chrome.findElement(FINISH_BUTTON).click();
+    }
+}
 
     @Step("Pressing the FINISH button")
     public void clickFinish() {
