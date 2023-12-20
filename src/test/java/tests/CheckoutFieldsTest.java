@@ -6,7 +6,7 @@ import static org.testng.Assert.assertEquals;
 
 public class CheckoutFieldsTest extends BaseTest {
 
-    @Test
+    @Test(description = "Empty fields checkout test")
     public void emptyFieldsCheck() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -18,7 +18,7 @@ public class CheckoutFieldsTest extends BaseTest {
                 "Wrong message or not reflected");
     }
 
-    @Test
+    @Test(description = "Empty Last Name field checkout test")
     public void emptyLastNameCheck() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -30,7 +30,7 @@ public class CheckoutFieldsTest extends BaseTest {
                 "Wrong message or not reflected");
     }
 
-    @Test
+    @Test(description = "Empty Postal Code field checkout test")
     public void emptyPostalCodeCheck() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -42,7 +42,7 @@ public class CheckoutFieldsTest extends BaseTest {
                 "Wrong message or not reflected");
     }
 
-    @Test
+    @Test(description = "Successful checkout test")
     public void successfulCheckout() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -54,4 +54,4 @@ public class CheckoutFieldsTest extends BaseTest {
                 "Thank you for your order!",
                 "Wrong message or not reflected");
     }
-}
+  }
