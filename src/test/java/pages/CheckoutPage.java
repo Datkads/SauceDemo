@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -17,6 +18,7 @@ public class CheckoutPage extends BasePage {
         super(chrome);
     }
 
+    @Step("Finishing checkout with {firstName}, {lastName}, {postalCode} data")
     public void fillInTheFields(String firstName, String lastName, String postalCode) {
         chrome.findElement(FIRST_NAME_INPUT).sendKeys(firstName);
         chrome.findElement(LAST_NAME_INPUT).sendKeys(lastName);
@@ -24,14 +26,17 @@ public class CheckoutPage extends BasePage {
         chrome.findElement(CONTINUE_BUTTON).click();
     }
 
+    @Step("Taking expected error")
     public String getError() {
         return chrome.findElement(ERROR_MESSAGE).getText();
     }
 
+    @Step("Taking expected successful message")
     public String getMessage() {
         return chrome.findElement(SUCCESSFUL_MESSAGE).getText();
     }
 
+    @Step("Pressing the FINISH button")
     public void clickFinish() {
         chrome.findElement(FINISH_BUTTON).click();
     }
