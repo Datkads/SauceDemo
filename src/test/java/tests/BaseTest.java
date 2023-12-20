@@ -3,8 +3,10 @@ package tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestContext;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.*;
 import pages.CartPage;
 import pages.CheckoutPage;
@@ -26,12 +28,16 @@ public class BaseTest {
     public void setup(@Optional("chrome") String browser, ITestContext testContext) {
         if(browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
-            chrome = new ChromeDriver();
-            chrome.manage().window().maximize();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
+            chrome = new ChromeDriver(options);
+            //chrome.manage().window().maximize();
         } else if (browser.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();
-            chrome = new EdgeDriver();
-            chrome.manage().window().maximize();
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("headless");
+            chrome = new EdgeDriver(options);
+            //chrome.manage().window().maximize();
         }
         testContext.setAttribute("chrome", chrome);
         chrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -44,6 +50,8 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true, description = "Browser shutdown")
     public void tearDown() {
-        chrome.quit();
+        if(chrome != null) {
+            chrome.quit();
+        }
     }
 }

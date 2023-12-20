@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" name="SauceDemo Smoke Test" parallel="tests">
+    <listeners>
+        <listener class-name="tests.TestListener"></listener>
+    </listeners>
     <test name="Chrome">
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.ProductTest"/>
+            <class name="tests.CheckoutFieldsTest"/>
             <parameter name="browser" value="chrome"></parameter>
         </classes>
     </test> <!-- Test -->
@@ -12,6 +16,7 @@
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.ProductTest"/>
+            <class name="tests.CheckoutFieldsTest"/>
             <parameter name="browser" value="edge"></parameter>
         </classes>
     </test> <!-- Test -->

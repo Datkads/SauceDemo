@@ -7,7 +7,7 @@ Check empty password login
 
 Try locked user login
 
-Open and close the burger menu
+Check burger menu
 
 Add any item to the cart
 
@@ -17,9 +17,9 @@ Filter items by price (low to high)
 
 Filter items by price (high to low)
 
-Filter times by name (A to Z)
+Filter items by name (A to Z)
 
-Filter times by name (Z to A)
+Filter items by name (Z to A)
 
 Open any items page
 
