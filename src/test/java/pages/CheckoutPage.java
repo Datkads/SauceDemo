@@ -39,11 +39,6 @@ public class CheckoutPage extends BasePage {
         return chrome.findElement(SUCCESSFUL_MESSAGE).getText();
     }
 
-    public void clickFinish() {
-        chrome.findElement(FINISH_BUTTON).click();
-    }
-}
-
     @Step("Pressing the FINISH button")
     public void clickFinish() {
         chrome.findElement(FINISH_BUTTON).click();
